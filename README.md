@@ -21,7 +21,7 @@ It is available here [@luxmedbot](https://telegram.me/luxmedbot), or you can hos
     - [docker-compose-arm64.yml](https://raw.githubusercontent.com/dyrkin/luxmed-bot/master/docker/docker-compose-arm64.yml)
 4. Download [secrets.env.template](https://raw.githubusercontent.com/dyrkin/luxmed-bot/master/docker/secrets.env.template) 
    to the same directory and rename it to **secrets.env**
-5. Edit **secrets.env** by specifying your **TELEGRAM_TOKEN** and **SECURITY_SECRET**
+5. Edit **secrets.env** by specifying your **TELEGRAM_TOKEN**, **TELEGRAM_ALLOWED_CHAT_ID**, and **SECURITY_SECRET**
 6. Start the application by running the following commands:
     ```bash
     docker compose pull

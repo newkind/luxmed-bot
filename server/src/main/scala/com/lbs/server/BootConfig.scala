@@ -22,6 +22,9 @@ class BootConfig {
   @Value("${telegram.token}")
   private var telegramBotToken: String = uninitialized
 
+  @Value("${telegram.allowed-chat-id}")
+  private var telegramAllowedChatId: Long = 0L
+
   @Autowired
   private var apiService: ApiService = uninitialized
 
@@ -279,7 +282,7 @@ class BootConfig {
   def router: Router = new Router(authFactory)(actorSystem)
 
   @Bean
-  def telegram: TelegramBot = new TelegramBot(router ! _, telegramBotToken)
+  def telegram: TelegramBot = new TelegramBot(router ! _, telegramBotToken, telegramAllowedChatId)
 
   @Bean
   def bot: Bot = new Bot(telegram)
